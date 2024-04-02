@@ -149,7 +149,7 @@ export class FetchApiDataService {
           Auathorization: 'Bearer ' + token,
         }),
       })
-      .pipe(map(this.extractResponseData), catcherror(this.handleError));
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Non-typed response extraction
