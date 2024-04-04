@@ -21,9 +21,10 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
 @NgModule({
-  declarations: [AppComponent, UserRegistrationFormComponent],
+  declarations: [AppComponent, UserRegistrationFormComponent, UserLoginFormComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
