@@ -1,0 +1,14 @@
+.welcome-page {
+  display: grid;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+.welcome-page__components {
+  padding: 50px;
+}
+
+.mdc-card__actions {
+  justify-content: center;
+}
