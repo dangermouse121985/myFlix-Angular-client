@@ -15,6 +15,10 @@ import {
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
+import { MatButton } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,10 +33,16 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { NavHeaderComponent } from './nav-header/nav-header.component';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserFavoritesComponent } from './user-favorites/user-favorites.component';
+import { DirectorDetailsComponent } from './director-details/director-details.component';
+import { GenreDetailsComponent } from './genre-details/genre-details.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'favorites', component: UserFavoritesComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -45,6 +55,10 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     MovieDetailsComponent,
     NavHeaderComponent,
+    UserProfileComponent,
+    UserFavoritesComponent,
+    DirectorDetailsComponent,
+    GenreDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +76,10 @@ const appRoutes: Routes = [
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
+    MatButton,
+    MatSidenavModule,
+    MatListModule,
+    FlexLayoutModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],

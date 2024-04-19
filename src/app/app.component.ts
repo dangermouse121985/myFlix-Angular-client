@@ -7,17 +7,28 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'myFlix-Angular-client';
-  showHeader: boolean = true;
+  showHeader: boolean = false;
 
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if (val.url != '/welcome') {
-          this.showHeader = true;
+        if (val.url == '/welcome') {
+          this.showHeader = false;
         } else {
+          this.showHeader = true;
+        }
+      }
+
+      if (val instanceof NavigationEnd) {
+        if (val.url == '/') {
           this.showHeader = false;
         }
       }
     });
+  }
+
+  logout(): void {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
   }
 }

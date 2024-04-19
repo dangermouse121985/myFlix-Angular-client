@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './welcome-page.component.scss',
 })
 export class WelcomePageComponent {
+  showHeader: boolean = false;
   constructor(public dialog: MatDialog) {}
   ngONinit(): void {}
   openUserRegistrationDialog(): void {

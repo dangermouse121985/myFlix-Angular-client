@@ -4,22 +4,22 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { GenreDetailsComponent } from '../genre-details/genre-details.component';
-import { DirectorDetailsComponent } from '../director-details/director-details.component';
 
 @Component({
-  selector: 'app-movie-card',
-  templateUrl: './movie-card.component.html',
-  styleUrl: './movie-card.component.scss',
+  selector: 'app-user-favorites',
+  templateUrl: './user-favorites.component.html',
+  styleUrl: './user-favorites.component.scss',
 })
-export class MovieCardComponent {
+export class UserFavoritesComponent {
   movies: any[] = [];
+  userFavorites: any[] = [];
   data = localStorage.getItem('user');
   userData = JSON.parse(this.data!);
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +33,12 @@ export class MovieCardComponent {
   getMovies(): void {
     this.fetchApiData.getAllMoviesService().subscribe((resp: any) => {
       this.movies = resp;
-      return this.movies;
+      this.userFavorites = this.movies.filter((m) => {
+        console.log(m._id);
+        return this.userData.favorites.includes(m._id);
+      });
+      console.log(this.userFavorites);
+      return this.userFavorites;
     });
   }
 
@@ -41,22 +46,6 @@ export class MovieCardComponent {
     this.dialog.open(MovieDetailsComponent, {
       data: {
         datakey: movieTitle,
-      },
-    });
-  };
-
-  openDirectorDetailsDialog = (directorName: string) => {
-    this.dialog.open(DirectorDetailsComponent, {
-      data: {
-        datakey: directorName,
-      },
-    });
-  };
-
-  openGenreDetailsDialog = (genreTitle: string) => {
-    this.dialog.open(GenreDetailsComponent, {
-      data: {
-        datakey: genreTitle,
       },
     });
   };
@@ -70,6 +59,13 @@ export class MovieCardComponent {
           console.log(response);
           localStorage.setItem('user', JSON.stringify(response));
           this.userData = response;
+          this.snackBar.open(
+            'Please Refresh the Page to See the Changes',
+            'OK',
+            {
+              duration: 5000,
+            }
+          );
         });
     } else {
       console.log(this.userData.username);
@@ -79,6 +75,13 @@ export class MovieCardComponent {
           console.log(response);
           localStorage.setItem('user', JSON.stringify(response));
           this.userData = response;
+          this.snackBar.open(
+            'Please Refresh the Page to See the Changes',
+            'OK',
+            {
+              duration: 5000,
+            }
+          );
         });
     }
   };
