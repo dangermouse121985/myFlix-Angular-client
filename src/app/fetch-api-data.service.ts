@@ -20,7 +20,7 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
   //making the api call for the user registration endpoint
   public userRegistrationService(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    console.log(typeof userDetails.birth);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));

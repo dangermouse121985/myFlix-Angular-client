@@ -11,15 +11,16 @@ import { formatDate } from '@angular/common';
 export class UserProfileComponent {
   data = localStorage.getItem('user');
   jsonData = JSON.parse(this.data!);
-  birthDate = new Date(this.jsonData.birth);
-  formattedBirthDate = formatDate(this.birthDate, 'YYYY-MM-dd', 'en-us');
+  formattedBirthDate = this.jsonData.birth
+    ? formatDate(new Date(this.jsonData.birth), 'YYYY-MM-dd', 'en-us')
+    : '';
   @Input() userData = {
     username: this.jsonData.username,
     password: '',
     first_name: this.jsonData.first_name,
     last_name: this.jsonData.last_name,
     email: this.jsonData.email,
-    birth: this.birthDate,
+    birth: new Date(this.formattedBirthDate),
   };
 
   constructor(
@@ -29,15 +30,12 @@ export class UserProfileComponent {
 
   setUser(): void {
     this.userData.birth = new Date(this.formattedBirthDate);
-    console.log(this.userData.birth);
-    console.log(this.userData);
     this.fetchApiData
       .updateUserService(this.userData.username, this.userData)
       .subscribe(
         (response) => {
-          console.log(this.userData);
           localStorage.setItem('user', JSON.stringify(response));
-          console.log(response);
+          console.log(response.birth);
         },
         (response) => {
           console.log(response);

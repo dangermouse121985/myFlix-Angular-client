@@ -13,25 +13,13 @@
       alt="{{ movie.title }}"
     />
     <mat-card-actions>
-      <button
-        mat-button
-        color="primary"
-        (click)="openMovieDetailsDialog(movie.title)"
-      >
+      <button mat-button (click)="openMovieDetailsDialog(movie.title)">
         More Details
       </button>
-      <button
-        mat-button
-        color="primary"
-        (click)="openDirectorDetailsDialog(movie.director)"
-      >
+      <button mat-button (click)="openDirectorDetailsDialog(movie.director)">
         Director
       </button>
-      <button
-        mat-button
-        color="primary"
-        (click)="openGenreDetailsDialog(movie.genre)"
-      >
+      <button mat-button (click)="openGenreDetailsDialog(movie.genre)">
         Genre
       </button>
       <mat-icon

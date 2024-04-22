@@ -3,6 +3,12 @@
   padding: 0 15px 15px 15px;
   height: 100%;
   box-shadow: none;
+  background-color: rgba(32, 57, 71, 1);
+  color: #fff;
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: #fff;
 }
 
 .mat-mdc-card-content {

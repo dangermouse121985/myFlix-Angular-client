@@ -14,7 +14,7 @@
       <div class="movie-addt-details">
         <div>
           <h2>Director</h2>
-          <button mat-button color="primary" (click)="getDirector()">
+          <button mat-button (click)="getDirector()">
             {{ movie.director }}
           </button>
         </div>
@@ -22,7 +22,7 @@
           <h2>Actors</h2>
           <div class="movie-actors">
             <div *ngFor="let actor of movie.actors">
-              <button mat-button color="primary" (click)="getActor(actor.name)">
+              <button mat-button (click)="getActor(actor.name)">
                 {{ actor.name }}
               </button>
             </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="scroll-bottom">
           <h2>Genre</h2>
-          <button mat-button color="primary" (click)="getGenre()">
+          <button mat-button (click)="getGenre()">
             {{ movie.genre }}
           </button>
         </div>

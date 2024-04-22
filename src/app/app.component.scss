@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&family=Permanent+Marker&family=Roboto:wght@500&display=swap");
+
+body,
+.mat-drawer-container {
+  background-color: #2e5266;
+}
 .menu-spacer {
   flex: 1 1 auto;
+}
+
+.logo {
+  font-family: "Permanent Marker", cursive;
+  text-align: center;
+  color: #d52941;
+  margin: 0 auto;
+  font-size: 40px;
+}
+
+mat-toolbar {
+  position: relative;
+  z-index: 999;
+  background-color: rgba(32, 57, 71, 1);
+  box-shadow: 1px 1px 10px #000;
 }

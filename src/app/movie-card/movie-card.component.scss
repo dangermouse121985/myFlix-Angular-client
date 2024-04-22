@@ -14,7 +14,22 @@ mat-icon {
   margin: 50px auto;
   width: 75%;
   grid-column-gap: 20px;
-  grid-row-gap: 10px;
+  grid-row-gap: 20px;
+}
+
+mat-card {
+  background-color: rgba(32, 57, 71, 1);
+  color: #fff;
+  box-shadow: 1px 1px 10px #000;
+}
+
+mat-card-subtitle,
+.mat-mdc-button:not(:disabled) {
+  color: #fff;
+}
+
+mat-icon {
+  color: #d52941;
 }
 
 .mat-mdc-card {

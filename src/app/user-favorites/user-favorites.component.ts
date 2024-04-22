@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DirectorDetailsComponent } from '../director-details/director-details.component';
+import { GenreDetailsComponent } from '../genre-details/genre-details.component';
 
 @Component({
   selector: 'app-user-favorites',
@@ -13,8 +15,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserFavoritesComponent {
   movies: any[] = [];
   userFavorites: any[] = [];
-  data = localStorage.getItem('user');
-  userData = JSON.parse(this.data!);
+  localData = localStorage.getItem('user');
+  userData = JSON.parse(this.localData!);
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -46,6 +48,22 @@ export class UserFavoritesComponent {
     this.dialog.open(MovieDetailsComponent, {
       data: {
         datakey: movieTitle,
+      },
+    });
+  };
+
+  openDirectorDetailsDialog = (directorName: string) => {
+    this.dialog.open(DirectorDetailsComponent, {
+      data: {
+        datakey: directorName,
+      },
+    });
+  };
+
+  openGenreDetailsDialog = (genreTitle: string) => {
+    this.dialog.open(GenreDetailsComponent, {
+      data: {
+        datakey: genreTitle,
       },
     });
   };
