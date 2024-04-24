@@ -20,7 +20,7 @@ export class FetchApiDataService {
   constructor(private http: HttpClient) {}
   //making the api call for the user registration endpoint
   public userRegistrationService(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    console.log(typeof userDetails.birth);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
@@ -68,6 +68,18 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  getActorsService(actorName: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    console.log(actorName);
+    return this.http
+      .get(apiUrl + 'actors/' + actorName, {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
+  }
+
   getGenreService(genreTitle: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(genreTitle);
@@ -104,11 +116,12 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  addFavoritesService(movieId: any, username: any): Observable<any> {
+  addFavoritesService(username: any, movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
-    console.log(`${username} - ${movieId}`);
+    console.log(apiUrl + 'users/' + username + '/favorites/' + movieId);
+    console.log(`${username} - ${movieId} - ${token}`);
     return this.http
-      .put(apiUrl + 'users/' + username + '/favorites/' + movieId, {
+      .put(apiUrl + 'users/' + username + '/favorites/' + movieId, '', {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
@@ -118,7 +131,6 @@ export class FetchApiDataService {
 
   updateUserService(username: any, userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
-    console.log(username);
     return this.http
       .put(apiUrl + 'users/' + username, userDetails, {
         headers: new HttpHeaders({
@@ -128,7 +140,7 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  deleteMovieService(movieId: any, username: any): Observable<any> {
+  deleteFavoriteMovieService(username: any, movieId: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(`${username} - ${movieId}`);
     return this.http

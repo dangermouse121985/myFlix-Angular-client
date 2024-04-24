@@ -1,0 +1,78 @@
+app-movie-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+mat-icon {
+  text-align: center;
+}
+
+.movie-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 50px auto;
+  width: 75%;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+mat-card {
+  background-color: rgba(32, 57, 71, 1);
+  color: #fff;
+  box-shadow: 1px 1px 10px #000;
+}
+
+mat-card-subtitle,
+.mat-mdc-button:not(:disabled) {
+  color: #fff;
+}
+
+mat-icon {
+  color: #d52941;
+}
+
+.mat-mdc-card {
+  min-width: 100%;
+}
+
+.mat-mdc-card-header {
+  height: 102px;
+}
+
+.movie-card-image {
+  width: 100%;
+}
+
+.mdc-card__actions {
+  margin: auto;
+}
+
+@media (max-width: 2000px) {
+  .movie-card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  mat-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1550px) {
+  .movie-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1150px) {
+  .movie-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .movie-card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

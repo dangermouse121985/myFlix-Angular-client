@@ -1,0 +1,32 @@
+.form__container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+}
+.mat-mdc-card {
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 50%;
+  margin: auto;
+  background-color: rgba(32, 57, 71, 1);
+  color: #fff;
+  box-shadow: 1px 1px 10px #000;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  color: #fff;
+  background-color: #d52941;
+}
+
+@media (max-width: 800px) {
+  .mat-mdc-card {
+    width: 90%;
+  }
+}
