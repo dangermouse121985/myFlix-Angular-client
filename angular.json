@@ -70,7 +70,7 @@
               "buildTarget": "myFlix-Angular-client:build:production"
             },
             "development": {
-              "buildTarget": "myFlix-Angular-client:build:development"
+              "buildTarget": "myFlix-Angular-client"
             }
           },
           "defaultConfiguration": "development"
