@@ -81,7 +81,15 @@ const appRoutes: Routes = [
     MatListModule,
     FlexLayoutModule,
   ],
-  providers: [provideClientHydration(), provideAnimationsAsync()],
+  providers: [
+    provideClientHydration(),
+    provideAnimationsAsync(),
+    { provide: 'LOCALSTORAGE', useFactory: getLocalStorage },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function getLocalStorage() {
+  return typeof window !== 'undefined' ? window.localStorage : null;
+}
