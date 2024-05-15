@@ -92,8 +92,7 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "baseHref": "myFlix-Angular-client"
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
