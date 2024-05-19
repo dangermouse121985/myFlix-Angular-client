@@ -29,7 +29,10 @@ export class MovieCardComponent {
       this.router.navigate(['welcome']);
     }
   }
-
+  /**
+   * Test
+   * @name test
+   */
   getMovies(): void {
     this.fetchApiData.getAllMoviesService().subscribe((resp: any) => {
       this.movies = resp;

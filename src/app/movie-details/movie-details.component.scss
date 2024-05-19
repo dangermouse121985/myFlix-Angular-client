@@ -1,4 +1,5 @@
 .mat-mdc-card {
+  position: relative;
   width: 55vw;
   padding: 0 15px 15px 15px;
   height: 100%;
@@ -6,6 +7,12 @@
   background-color: rgba(32, 57, 71, 1);
   overflow: scroll;
   color: #fff;
+}
+
+.mat-mdc-card-header {
+  position: fixed;
+  background-color: rgba(32, 57, 71, 1);
+  width: calc(55vw - 15px * 3);
 }
 
 .mat-mdc-button:not(:disabled) {
@@ -21,6 +28,7 @@
   grid-template-columns: 1fr 1fr;
   column-gap: 20px;
   width: 100%;
+  padding-top: 90px;
 }
 
 h1 {
@@ -61,6 +69,20 @@ button:hover {
   padding-bottom: 15px;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d52941;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
+  background: #203947;
+}
+
 @media (max-width: 1550px) {
   .mat-mdc-card {
     height: 90vh;
@@ -86,5 +108,9 @@ button:hover {
 @media (max-width: 800px) {
   .mat-mdc-card {
     width: 80vw;
+  }
+
+  .mat-mdc-card-header {
+    width: calc(80vw - 15px * 3);
   }
 }

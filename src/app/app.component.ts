@@ -9,6 +9,10 @@ export class AppComponent {
   title = 'myFlix-Angular-client';
   showHeader: boolean = false;
 
+  /**
+   * The header will not appear on the welcome (login) page. Once logged in the header will be visible
+   * @param router
+   */
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {

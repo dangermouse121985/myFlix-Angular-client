@@ -16,6 +16,5 @@ export class DirectorDetailsComponent {
 
   ngOnInit() {
     this.director = this.data.datakey;
-    console.log(this.director);
   }
 }

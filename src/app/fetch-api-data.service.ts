@@ -18,7 +18,11 @@ export class FetchApiDataService {
   // Inject the HttpClient Module to the contructor params
   // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {}
-  //making the api call for the user registration endpoint
+
+  /**
+   * @category POST
+   * @description Making the api call for the user registration endpoint
+   */
   public userRegistrationService(userDetails: any): Observable<any> {
     console.log(typeof userDetails.birth);
     return this.http
@@ -26,6 +30,9 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
+  /**
+   * @category POST
+   */
   public userLoginService(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http
@@ -33,6 +40,9 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
+  /**
+   * @category GET
+   */
   getAllMoviesService(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -44,6 +54,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category GET
+   */
   getOneMovieService(movieTitle: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(movieTitle);
@@ -56,6 +69,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category GET
+   */
   getDirectorService(directorName: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(directorName);
@@ -68,6 +84,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category GET
+   */
   getActorsService(actorName: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(actorName);
@@ -80,6 +99,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category GET
+   */
   getGenreService(genreTitle: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(genreTitle);
@@ -92,6 +114,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category GET
+   */
   getUserService(username: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(username);
@@ -104,6 +129,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category GET
+   */
   getFavoritesService(username: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(username);
@@ -116,6 +144,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category PUT
+   */
   addFavoritesService(username: any, movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(apiUrl + 'users/' + username + '/favorites/' + movieId);
@@ -129,6 +160,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category PUT
+   */
   updateUserService(username: any, userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
@@ -140,6 +174,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category DELETE
+   */
   deleteFavoriteMovieService(username: any, movieId: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(`${username} - ${movieId}`);
@@ -152,6 +189,9 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  /**
+   * @category DELETE
+   */
   deleteUserService(username: any): Observable<any> {
     const token = localStorage.getItem('token');
     console.log(username);

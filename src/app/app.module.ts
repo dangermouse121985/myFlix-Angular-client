@@ -31,7 +31,6 @@ import { UserLoginFormComponent } from './user-login-form/user-login-form.compon
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { NavHeaderComponent } from './nav-header/nav-header.component';
 import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserFavoritesComponent } from './user-favorites/user-favorites.component';
@@ -54,7 +53,6 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     MovieDetailsComponent,
-    NavHeaderComponent,
     UserProfileComponent,
     UserFavoritesComponent,
     DirectorDetailsComponent,

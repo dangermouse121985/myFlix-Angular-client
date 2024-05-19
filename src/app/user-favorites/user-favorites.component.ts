@@ -70,11 +70,9 @@ export class UserFavoritesComponent {
 
   addMovieToFavorites = (movieId: string) => {
     if (this.userData.favorites.indexOf(movieId) !== -1) {
-      console.log(this.userData.username);
       this.fetchApiData
         .deleteFavoriteMovieService(this.userData.username, movieId)
         .subscribe((response: any) => {
-          console.log(response);
           localStorage.setItem('user', JSON.stringify(response));
           this.userData = response;
           this.snackBar.open(
@@ -86,11 +84,9 @@ export class UserFavoritesComponent {
           );
         });
     } else {
-      console.log(this.userData.username);
       this.fetchApiData
         .addFavoritesService(this.userData.username, movieId)
         .subscribe((response: any) => {
-          console.log(response);
           localStorage.setItem('user', JSON.stringify(response));
           this.userData = response;
           this.snackBar.open(

@@ -38,7 +38,6 @@ export class UserProfileComponent {
           localStorage.setItem('user', JSON.stringify(response));
         },
         (response) => {
-          console.log(response);
           this.snackBar.open(response, 'OK', {
             duration: 2000,
           });
