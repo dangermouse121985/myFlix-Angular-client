@@ -28,3 +28,9 @@
 form {
   display: grid;
 }
+
+@media (max-width: 1250px) {
+  .mat-mdc-card {
+    max-width: 80vw;
+  }
+}

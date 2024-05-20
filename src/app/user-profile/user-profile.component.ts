@@ -28,17 +28,19 @@ export class UserProfileComponent {
     public snackBar: MatSnackBar
   ) {}
 
+  /**
+   * Update the user's profile based on their input (first and last name, email address, DOB, and username)
+   */
   setUser(): void {
+    console.log(this.userData);
     this.userData.birth = new Date(this.formattedBirthDate);
     this.fetchApiData
       .updateUserService(this.userData.username, this.userData)
       .subscribe(
         (response) => {
           localStorage.setItem('user', JSON.stringify(response));
-          console.log(response.birth);
         },
         (response) => {
-          console.log(response);
           this.snackBar.open(response, 'OK', {
             duration: 2000,
           });

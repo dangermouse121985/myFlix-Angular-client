@@ -30,6 +30,9 @@ export class MovieCardComponent {
     }
   }
 
+  /**
+   * Get all movies from the database
+   */
   getMovies(): void {
     this.fetchApiData.getAllMoviesService().subscribe((resp: any) => {
       this.movies = resp;
@@ -37,6 +40,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * Send the movieTitle to the MovieDetailsComponent as a datakey.
+   * Open the MovieDetailsComponent dialog using the movieTitle
+   * @param movieTitle
+   */
   openMovieDetailsDialog = (movieTitle: string) => {
     this.dialog.open(MovieDetailsComponent, {
       data: {
@@ -45,6 +53,11 @@ export class MovieCardComponent {
     });
   };
 
+  /**
+   * Send the directorName to the DirectorDetailsComponent as a datakey.
+   * Open the DirectorDetailsComponent dialog using the directorName
+   * @param directorName
+   */
   openDirectorDetailsDialog = (directorName: string) => {
     this.dialog.open(DirectorDetailsComponent, {
       data: {
@@ -53,6 +66,11 @@ export class MovieCardComponent {
     });
   };
 
+  /**
+   * Send the genreName to the GenreDetailsComponent as a datakey.
+   * Open the GenreDetailsComponent dialog using the genreTitle
+   * @param genreTitle
+   */
   openGenreDetailsDialog = (genreTitle: string) => {
     this.dialog.open(GenreDetailsComponent, {
       data: {
@@ -61,6 +79,12 @@ export class MovieCardComponent {
     });
   };
 
+  /**
+   * If the movieID is already in the user's favorite list, remove it as a favorite.
+   * Otherwise, add the id to the user's favorite list.
+   * The user will also receive a message asking them to refresh the page to see the changes.
+   * @param movieId
+   */
   addMovieToFavorites = (movieId: string) => {
     if (this.userData.favorites.indexOf(movieId) !== -1) {
       console.log(this.userData.username);

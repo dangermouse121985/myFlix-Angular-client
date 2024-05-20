@@ -12,6 +12,7 @@ export class WelcomePageComponent {
   showHeader: boolean = false;
   constructor(public dialog: MatDialog) {}
   ngONinit(): void {}
+
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {});
   }

@@ -16,6 +16,5 @@ export class GenreDetailsComponent {
 
   ngOnInit() {
     this.genre = this.data.datakey;
-    console.log(this.genre);
   }
 }

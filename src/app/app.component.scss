@@ -23,3 +23,23 @@ mat-toolbar {
   background-color: rgba(32, 57, 71, 1);
   box-shadow: 1px 1px 10px #000;
 }
+
+.mat-sidenav {
+  background-color: #d52941;
+}
+
+a {
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d52941;
+}
+
+::-webkit-scrollbar-track {
+  background: #203947;
+}

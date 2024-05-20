@@ -22,6 +22,9 @@ export class MovieDetailsComponent {
     this.getMovieDetails();
   }
 
+  /**
+   * Get movie details based on information sent from movie-card or user-favorites components
+   */
   getMovieDetails(): void {
     this.fetchApiData
       .getOneMovieService(this.data.datakey)
@@ -34,7 +37,6 @@ export class MovieDetailsComponent {
           actors: resp.actors,
           genre: resp.genre.name,
         };
-        console.log(this.movie);
         return this.movie;
       });
   }
@@ -45,7 +47,6 @@ export class MovieDetailsComponent {
     this.fetchApiData
       .getDirectorService(this.movie.director)
       .subscribe((response: any) => {
-        console.log(response);
         this.director = response;
         return this.director;
       });
@@ -55,7 +56,6 @@ export class MovieDetailsComponent {
     this.director = {};
     this.genre = {};
     this.fetchApiData.getActorsService(actorName).subscribe((response: any) => {
-      console.log(response);
       this.actor = response[0];
       return this.actor;
     });
@@ -67,7 +67,6 @@ export class MovieDetailsComponent {
     this.fetchApiData
       .getGenreService(this.movie.genre)
       .subscribe((response: any) => {
-        console.log(response);
         this.genre = response;
         return this.genre;
       });
