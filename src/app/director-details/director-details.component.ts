@@ -14,6 +14,9 @@ export class DirectorDetailsComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
+  /**
+   * Initialize director based on information sent from movie-card or user-favorites components
+   */
   ngOnInit() {
     this.director = this.data.datakey;
   }

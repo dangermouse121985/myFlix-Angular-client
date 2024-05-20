@@ -14,6 +14,9 @@ export class GenreDetailsComponent {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
+  /**
+   * Initialize genre based on information sent from movie-card or user-favorites components
+   */
   ngOnInit() {
     this.genre = this.data.datakey;
   }
