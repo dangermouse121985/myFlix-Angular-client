@@ -24,11 +24,11 @@
   <mat-sidenav-container fxFlexFill style="height: 5vh">
     <mat-sidenav #sidenav>
       <mat-nav-list>
-        <a (click)="sidenav.toggle()" mat-list-item>Close</a>
-        <a href="/movies" mat-list-item>Home</a>
-        <a href="/favorites" mat-list-item>My Favorites</a>
-        <a href="/profile" mat-list-item>My Profile</a>
-        <a href="" mat-list-item (click)="logout()">Logout</a>
+        <mat-list-item><a (click)="sidenav.toggle()">Close</a></mat-list-item>
+        <mat-list-item><a href="/movies">Home</a></mat-list-item>
+        <mat-list-item><a href="/favorites">My Favorites</a></mat-list-item>
+        <mat-list-item><a href="/profile">My Profile</a></mat-list-item>
+        <mat-list-item><a href="" (click)="logout()">Logout</a></mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content fxFlexFill
