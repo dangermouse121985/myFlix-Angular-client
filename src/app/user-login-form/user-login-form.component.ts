@@ -25,6 +25,9 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * On successful login, the user will be be redirected to the Movies page and presented with a snackbar message.
+   */
   loginUser(): void {
     this.fetchApidata.userLoginService(this.userData).subscribe(
       (response) => {

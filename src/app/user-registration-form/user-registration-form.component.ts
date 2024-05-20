@@ -33,11 +33,13 @@ export class UserRegistrationFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * On successful registration, the user will be presented with a snackbar message and the registration modal will close. The user can then login with their new credentials.
+   */
   // This is the function responsible for sending the form inputs to the backend
   registerUser(): void {
     this.fetchApiData.userRegistrationService(this.userData).subscribe(
       (response) => {
-        // Logic for a successful user registration goes here! (To be implemented)
         this.dialogRef.close(); // This will close the modal on success!
         this.snackBar.open('User Registered Successfully!', 'OK', {
           duration: 2000,

@@ -31,6 +31,9 @@ export class AppComponent {
     });
   }
 
+  /**
+   * Clear local storage on logout
+   */
   logout(): void {
     localStorage.removeItem('user');
     localStorage.removeItem('token');

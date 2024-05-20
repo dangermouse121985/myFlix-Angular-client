@@ -22,6 +22,9 @@ export class MovieDetailsComponent {
     this.getMovieDetails();
   }
 
+  /**
+   * Get movie details based on information sent from movie-card or user-favorites components
+   */
   getMovieDetails(): void {
     this.fetchApiData
       .getOneMovieService(this.data.datakey)
