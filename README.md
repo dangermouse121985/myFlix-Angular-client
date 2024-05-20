@@ -140,4 +140,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 This project is licensed under the MIT License.
 
-**This readME File was build using he help of ChatGPT**
+**This readME File was built using the help of ChatGPT**
