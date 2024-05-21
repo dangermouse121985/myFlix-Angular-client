@@ -23,7 +23,7 @@ export class MovieDetailsComponent {
   }
 
   /**
-   * Get movie details based on information sent from movie-card or user-favorites components
+   * Get movie details based on information sent from movie-card or user-favorites component
    */
   getMovieDetails(): void {
     this.fetchApiData
@@ -41,6 +41,9 @@ export class MovieDetailsComponent {
       });
   }
 
+  /**
+   * Get the director for the movie the user is viewing
+   */
   getDirector(): void {
     this.genre = {};
     this.actor = {};
@@ -52,6 +55,10 @@ export class MovieDetailsComponent {
       });
   }
 
+  /**
+   * Get the actor for the movie the user is viewing. This function is within a loop in the html that will get the list (3) of featured actors.
+   * @param actorName
+   */
   getActor(actorName: any): void {
     this.director = {};
     this.genre = {};
@@ -61,6 +68,9 @@ export class MovieDetailsComponent {
     });
   }
 
+  /**
+   * Get teh genre for the movie the user is viewing.
+   */
   getGenre(): void {
     this.director = {};
     this.actor = {};

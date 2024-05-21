@@ -13,9 +13,16 @@ export class WelcomePageComponent {
   constructor(public dialog: MatDialog) {}
   ngONinit(): void {}
 
+  /**
+   * Open the UserRegistrationFormComponent to allow the user to create a new account.
+   */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {});
   }
+
+  /**
+   * Open the UserLoginFormComponent to allow the user to login
+   */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {});
   }
