@@ -57,11 +57,13 @@ As remote work becomes increasingly common, effective communication and collabor
 - **Single Movie View**: Users can see additional movie details and navigate to director and genre views.
 - **Director View**: Displays details about the movie's director.
 - **Genre View**: Displays details about the movie's genre.
-- **User View**: User's can view and update their profile information.
+- **User View**: Users can view and update their profile information.
+- **Favorite/Unfavorite Movies**: Users can favorite and unfavorite movies.
+- **Usar's Favorites View**: Users can view their favorite movies list.
 
 ## Technical Requirements
 
-- The application is writte using [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+- The application is written using [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 - It requires the latest version of Node.js and npm package.
 - It must contain user registration and login forms.
 - It is designed using Angular Material.
